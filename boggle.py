@@ -3,7 +3,7 @@
 from random import choice
 import string
 
-commonletters = "ETAINOSHRDLUCMETAINOSHRETAINOSETAINOSEEEEE"
+commonletters = "ETAINOSHRDLUCMETAINOSHRETAINOSETAINOSEE"
 boggle_alphabet = [*string.ascii_uppercase,*commonletters]
 
 class Boggle():

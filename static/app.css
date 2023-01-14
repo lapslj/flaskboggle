@@ -8,7 +8,41 @@ table {
     display: flex;
 }
 
-#guesslist {
+#wordresponse {
+    text-align: center;
+    background-color: goldenrod;
+}
+
+.gotimer {
+  animation: fadeOut 65s;
+  width: 150px;
+  color: black;
+  background: forestgreen;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+#bottom {
+    display:inline;
+
+}
+
+#scoreboard {
+    width: 50px;
+    height: 50px;
+    background: #080001;
+    border-radius: 3px;
+    font-family:'Courier New';
+    font-size: 40px;
+    font-style: normal;
+    text-align: center;
+    color: yellow;
+  }
+
+#guesslist, #highscores {
     width: 300px;
     height: 498px;
     border: dashed blue 1px;

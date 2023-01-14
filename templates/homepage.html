@@ -9,6 +9,9 @@
 <form action="/newboard" method="POST">
   <button>Make Board</button>
 </form>
+<div class="gotimer">
+  Sixty seconds: go!
+</div>
 <br>
 <div id="gamespace">
 <table>
@@ -22,17 +25,32 @@
   </table>
   <div id="guesslist">
     <p class="headtext">GUESS-LIST:</p>
-    <ul>
+    <p id="wordresponse"></p>
+    <ul id="guessUl">
       {% for guess in guesslist %}
       <li>{{ guess }}</li>
       {% endfor %}
     </ul>
   </div>
+  <div id="highscores">
+    <p class="headtext">RECENT SCORES:</p>
+    <ol>
+      {% for score in highscores %}
+      <li>{{ score }}</li>
+      {% endfor %}
+    </ol>
+  </div>
 </div>
+<div id="bottom">
 <form action ="/checkword" method="POST" id="wordsubmit">
   <input type="text" placeholder="guess a word" name="word" id="guessword">
   <button id="sButton">Submit</button>
 </form>
+SCORE: 
+<div id="scoreboard">
+  0
+</div>
+</div>
 
 
 {% endblock %}

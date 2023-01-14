@@ -1,25 +1,47 @@
 let $btn = $("#sButton")
-let $guesslist = $("#guesslist")
+let $guesslist = $("#guessUl")
 let $guessform = $("#wordsubmit")
 let $guessword = $("#guessword")
+let $messages = $("#wordresponse")
+let $scoreboard = $("#scoreboard")
 
 
-// THEN create a bigger function that spits it into a POST request without changing the page
-// SOMETHING WE ARE SENDING ISNT WORKING
-// what returns should be the response and maybe spit that into the console
-//
+//make the guess-list prettier and have it indicate what's a word and what isn't
+//make a flash messages space at the top that resets every time we run checkWord
+
+
+setTimeout(endGame,60000)
+
+async function endGame(){
+    let currscore = $scoreboard.text()
+    let response = await axios.post("http://localhost:5000/endgame/"+currscore)
+    alert("Game over!")
+    $guessform.remove()
+}
 
 $btn.on("click",checkWord)
 
 async function checkWord(e){
     e.preventDefault()
+    $messages.text("")
     let guessVal = $guessword.val()
-    console.log(guessVal)
     let response = await axios.post("http://localhost:5000/checkword/"+guessVal) //seeing what comes back
-    console.log(response)
+    let respLiteral = response.data.result
+    let respScore = response.data.score
     console.log(guessVal)
-    // $guessword.val("")
+    console.log(response.data)
+    $messages.text(`${guessVal}: ${respLiteral}`)
+    $guessword.val("")
+    $scoreboard.text(respScore)
+    if (respLiteral === "already-guessed" || respLiteral === "not-on-board" || respLiteral === "not-word"){
+        return
+    }
+    else {
+        $messages.text(`${guessVal}: ${respLiteral}`)
+        $guesslist.append(`<li>${guessVal}</li>`)
+    } 
 }
+
 
 /*
 async function checkWord(id,cVal){
