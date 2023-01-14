@@ -1,0 +1,80 @@
+table {
+    width: 500px;
+    height: 500px;
+    border: solid black 4px;
+}
+
+#gamespace {
+    display: flex;
+}
+
+#guesslist {
+    width: 300px;
+    height: 498px;
+    border: dashed blue 1px;
+    margin: 0px 0px 0px 10px;
+}
+
+#wordsubmit{
+    margin: 10px;
+}
+
+.headtext {
+    text-align: center;
+    font-size: medium;
+    font-family: 'Arial';
+    font-weight: bolder;
+}
+
+tr {
+    height: 20%;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Arial';
+    font-weight: bolder;
+}
+
+td {
+    width: 20%;
+    border: solid black 2px;
+    border-radius: 5%;
+}
+
+body {
+    padding:0;
+    margin:0;
+}
+
+.error{
+    float: left;
+    background-color:salmon;
+    padding: 14px 16px;
+}
+
+.success{
+    float: left;
+    background-color: palegreen;
+    padding: 14px 16px;
+}
+
+#content{
+    margin: 40px;
+}
+
+.navbar {
+    background-color: limegreen;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+
+}
+
+.navbar a:hover {
+   background-color: aliceblue;
+    
+}

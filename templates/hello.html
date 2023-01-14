@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+Hello Page
+{% endblock %}
+
+{% block content %}
+
+<h1>This is the generic Hello welcome page.</h1>
+<form action="/greet">
+    <p>What's your name? <input name="person"></p>
+    <p>What's your favorite color? <input name="color"></p>
+    <p>List a bunch of numbers <input name="liststuff"></p>
+    <button>Go!</button>
+</form>
+
+{% endblock %}

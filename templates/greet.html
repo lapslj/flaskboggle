@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+Hello Page
+{% endblock %}
+
+{% block content %}
+    <h3> Hi there {{name}}. That is sure a nice name. </h3>
+    {% for x in liststuff %}
+    <li> {{x}} is a dumb number </li>
+    {% endfor %}
+    {% endblock %}

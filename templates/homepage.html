@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+  
+<form action="/newboard" method="POST">
+  <button>Make Board</button>
+</form>
+<br>
+<div id="gamespace">
+<table>
+  {% for row in content %}
+    <tr>
+    {% for letter in row %}
+      <td>{{ letter }}</td>
+    {% endfor %}
+    </tr>
+  {% endfor %}
+  </table>
+  <div id="guesslist">
+    <p class="headtext">GUESS-LIST:</p>
+    <ul>
+      {% for guess in guesslist %}
+      <li>{{ guess }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<form action ="/checkword" method="POST" id="wordsubmit">
+  <input type="text" placeholder="guess a word" name="word" id="guessword">
+  <button id="sButton">Submit</button>
+</form>
+
+
+{% endblock %}
+
